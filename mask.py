@@ -1,16 +1,18 @@
 import cv2 as cv
 import numpy as np
 
-img = cv.imread("tmb_14441_4994.jpg")
-cv.imshow('cats',img)
+img = cv.imread("lol.png")
+cv.imshow("1",img)
 
-blank = np.zeros(img.shape[:2],dtype='uint8')
-cv.imshow('fg',blank)
+blank = np.zeros(img.shape[:2],dtype="uint8")
 
-mask = cv.rectangle(blank,(200,500),(355,555),255,-1)
-cv.imshow("f",mask)
+mask1 = cv.circle(blank.copy(),(800,400),300,255,-1)
+maks = cv.rectangle(blank.copy(),(400,400),(200,30),255,-1)
 
-masked = cv.bitwise_and(img,img,mask=mask)
-cv.imshow("f32",masked)
+
+masked = cv.bitwise_and(img,img,mask=maks)
+cv.imshow("mask",masked)
+
+
 
 cv.waitKey(0)
