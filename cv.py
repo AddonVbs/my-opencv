@@ -20,7 +20,6 @@ print(f"{len(contorus)} ")
 
 
 cv2.imwrite("image_final.png", img)
-print("Обработанное изображение сохранено как processed_image.png")
 
 # Отображение обработанного изображения
 cv2.imshow("image_final", img)
